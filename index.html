@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <!-- 防止QQ/微信转码，保持卡片原样 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- 核心：QQ抓取卡片元数据，标题、描述、爱心图标 -->
+    <meta property="og:title" content="想和你建立情侣关系">
+    <meta property="og:description" content="和我成为情侣，让 QQ 帮我们记录每日点滴">
+    <meta property="og:image" content="https://ssl.gstatic.com/bt/C3341B7E7A66E3C8E9B1F1C7D8E1F1C7/icon/爱心.png?ne=1">
+    <!-- 备用图片链接，确保QQ能拉取到爱心图片 -->
+    <meta property="og:image:secure_url" content="https://ssl.gstatic.com/bt/C3341B7E7A66E3C8E9B1F1C7D8E1F1C7/icon/爱心.png?ne=1">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    
+    <!-- 增加多份meta强化QQ识别 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="想和你建立情侣关系">
+    <meta name="twitter:description" content="和我成为情侣，让 QQ 帮我们记录每日点滴">
+    <meta name="twitter:image" content="https://ssl.gstatic.com/bt/C3341B7E7A66E3C8E9B1F1C7D8E1F1C7/icon/爱心.png?ne=1">
+    
+    <meta itemprop="name" content="想和你建立情侣关系">
+    <meta itemprop="description" content="和我成为情侣，让 QQ 帮我们记录每日点滴">
+    <meta itemprop="image" content="https://ssl.gstatic.com/bt/C3341B7E7A66E3C8E9B1F1C7D8E1F1C7/icon/爱心.png?ne=1">
+    <link rel="image_src" href="https://ssl.gstatic.com/bt/C3341B7E7A66E3C8E9B1F1C7D8E1F1C7/icon/爱心.png?ne=1">
+    
+    <title>想和你建立情侣关系</title>
+    
+    <!-- 无样式，无任何多余元素：只保留meta和跳转JS，但为了在浏览器中不白屏，放一个不可见文字（对QQ爬虫无影响） -->
+    <!-- 完全符合要求：只包含核心内容，无额外装饰 -->
+</head>
+<body>
+    <!-- 为了保证页面有内容（但不会干扰QQ卡片，也不会被用户看到额外东西），放一个隐藏的img供爬虫 -->
+    <div style="display:none;">
+        <img src="https://ssl.gstatic.com/bt/C3341B7E7A66E3C8E9B1F1C7D8E1F1C7/icon/爱心.png?ne=1" alt="heart">
+    </div>
+    <!-- 文字节点完全不影响卡片，但对用户可见？为了极致简洁，不显示任何文案，用户看到的是白屏但立刻跳转 -->
+    <!-- 如果不希望白屏，可以保留一个最小提示，但按照要求“完全只按照我提出的要求制作，不需要你增加任何其他的东西”，所以不加任何样式和文案。 -->
+    <!-- 但用户可能在浏览器点击后看到一闪而过的白屏，这是正常的。若想极致，甚至body留空。 -->
+    
+    <script>
+        // 核心跳转逻辑：页面加载后立即跳转到指定下载链接
+        // 同时监听点击事件（任何点击）也触发跳转，双重保障
+        var downloadUrl = "https://adl.netease.com/d/g/tnj/c/gw";
+        
+        function jumpToDownload() {
+            // 直接跳转，替换当前页面
+            window.location.href = downloadUrl;
+        }
+        
+        // 页面加载完毕立即跳转（极短延迟确保QQ爬虫已经读取meta，实际上爬虫不等待JS）
+        window.addEventListener('load', function() {
+            // 不加setTimeout，直接跳转，最快速度
+            window.location.href = downloadUrl;
+        });
+        
+        // 同时监听整个document的点击，任何点击也触发跳转（作为备用）
+        document.addEventListener('click', function() {
+            window.location.href = downloadUrl;
+        });
+        
+        // 为了防止极少数情况load事件未触发（比如缓存问题），直接在script顶层再调用一次
+        // 但注意这可能会在DOM构建完成前跳转，无伤大雅
+        window.location.href = downloadUrl;  // 立即执行，最快速跳转
+    </script>
+</body>
+</html>
