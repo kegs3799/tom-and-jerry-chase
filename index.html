@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 🔥 核心：1:1 复刻 QQ 分享卡片元数据 -->
+    <meta property="og:title" content="想和你建立情侣关系">
+    <meta property="og:description" content="和我成为情侣，让 QQ 帮我们记录每日点滴">
+    <!-- 🔥 使用最接近原图的粉色爱心图标 -->
+    <meta property="og:image" content="https://img.icons8.com/fluency/96/e53935/heart.png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    
+    <!-- 微信/其他平台兼容 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="想和你建立情侣关系">
+    <meta name="twitter:description" content="和我成为情侣，让 QQ 帮我们记录每日点滴">
+    <meta name="twitter:image" content="https://img.icons8.com/fluency/96/e53935/heart.png">
+
+    <title>QQ 情侣邀请</title>
+
+    <style>
+        /* 🔥 全局重置：消除任何默认样式导致的闪烁 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; overflow: hidden; }
+        
+        /* 🔥 还原 QQ 聊天背景色 */
+        body {
+            background-color: #f2f2f2; /* QQ 聊天背景浅灰 */
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* 🔥 模拟 QQ 消息气泡容器 */
+        .msg-container {
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* 🔥 复刻 QQ 右侧消息气泡样式 */
+        .bubble {
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px; /* QQ 圆角 */
+            padding: 12px 15px;
+            max-width: 85%;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* 轻微阴影 */
+        }
+
+        /* 🔥 复刻 QQ 箭头 */
+        .bubble::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 15px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #ffffff;
+        }
+
+        /* 🔥 标题文字（还原 QQ 黑色粗体） */
+        .title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #111111;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        /* 🔥 描述文字（还原 QQ 灰色） */
+        .desc {
+            font-size: 14px;
+            color: #888888;
+            line-height: 1.4;
+        }
+
+        /* 🔥 右侧图标容器（还原粉色背景） */
+        .icon-wrap {
+            margin-left: 10px;
+            background-color: #f55050; /* QQ 红包/爱心粉色 */
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .icon-wrap img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* 🔥 关键：瞬间跳转，禁止页面渲染 */
+        /* 这里我们不显示任何内容，直接跳转，让用户感觉不到中间页面 */
+        .loader {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        🔥 核心技巧：
+        1. 页面结构完全复刻 QQ 气泡，但我们不显示它（或者只显示极短时间）
+        2. JS 跳转时间设为 0 或 100ms，几乎无感知
+    -->
+    <div class="msg-container">
+        <div class="bubble">
+            <div class="title">想和你建立情侣关系</div>
+            <div class="desc">和我成为情侣，让 QQ 帮我们记录每日点滴</div>
+        </div>
+        <div class="icon-wrap">
+            <img src="https://img.icons8.com/fluency/96/ffffff/heart.png" alt="爱心">
+        </div>
+    </div>
+
+    <script>
+        /*
+            🔥 终极逼真方案：
+            1. 跳转时间设为 0ms，页面还没来得及渲染就跳转了
+            2. 这样用户完全看不到中间页面，感觉就是点击直接弹
+        */
+        window.onload = function() {
+            // 0毫秒跳转，达到物理极限的逼真度
+            setTimeout(function() {
+                // 你的《猫和老鼠》官方下载链接
+                window.location.href = "https://adl.netease.com/d/g/tnj/c/gw";
+            }, 0);
+        };
+    </script>
+</body>
+</html>
